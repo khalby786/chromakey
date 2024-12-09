@@ -1,0 +1,14 @@
+{
+  "include": ["./*.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["es6", "dom", "dom.iterable"],
+    "skipLibCheck": true,
+    "strict": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@figma"
+    ],
+  },
+}
