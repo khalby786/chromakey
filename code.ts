@@ -8,12 +8,20 @@ if (figma.editorType === "figma") {
   // This plugin will open a window to prompt the user to enter a number, and
   // it will then create that many rectangles on the screen.
 
+  // Notify plugin loading
+  const notify = figma.notify("Loading plugin", {
+    timeout: Infinity,
+  });
+
   // This shows the HTML page in "ui.html".
   figma.showUI(__html__, {
     width: 300,
     height: 550,
     themeColors: true,
   });
+
+  // Close plugin once UI is loaded
+  notify.cancel();
 
   // Calls to "parent.postMessage" from within the HTML page will trigger this
   // callback. The callback will be passed the "pluginMessage" property of the
